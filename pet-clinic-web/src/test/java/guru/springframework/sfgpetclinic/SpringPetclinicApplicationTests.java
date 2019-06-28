@@ -11,6 +11,7 @@ public class SpringPetclinicApplicationTests {
 
     @Test
     public void contextLoads() {
+        assert(true);
     }
 
 }
