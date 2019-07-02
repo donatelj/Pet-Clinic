@@ -71,7 +71,7 @@ public class DataLoader implements CommandLineRunner {
         cat1.setPetType(savedCatPetType);
         cat1.setName("Cocotte");
         cat1.setBirthDate(LocalDate.of(2015, 8, 2));
-        cat1.setOwner(owner1);
+        cat1.setOwner(owner2);
         owner2.getPets().add(cat1);
 
         ownerService.Save(owner2);
