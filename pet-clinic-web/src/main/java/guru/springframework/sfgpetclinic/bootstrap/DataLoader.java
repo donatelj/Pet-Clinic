@@ -1,6 +1,7 @@
 package guru.springframework.sfgpetclinic.bootstrap;
 
 import guru.springframework.sfgpetclinic.model.Owner;
+import guru.springframework.sfgpetclinic.model.Pet;
 import guru.springframework.sfgpetclinic.model.PetType;
 import guru.springframework.sfgpetclinic.model.Vet;
 import guru.springframework.sfgpetclinic.services.OwnerService;
@@ -9,11 +10,13 @@ import guru.springframework.sfgpetclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+
 @Component
 public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
-    private  final PetTypeService petTypeService;
+    private final PetTypeService petTypeService;
 
     public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
         this.ownerService = ownerService;
@@ -36,6 +39,23 @@ public class DataLoader implements CommandLineRunner {
         //owner1.setId(1L);
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");
+        owner1.setAddress("442 Du Blizzard");
+        owner1.setCity("St-Jean");
+        owner1.setTelephone("450-515-5555");
+
+        Pet dog1 = new Pet();
+        dog1.setPetType(savedDogPetType);
+        dog1.setName("Lacie");
+        dog1.setBirthDate(LocalDate.of(2008, 12, 27));
+        dog1.setOwner(owner1);
+        owner1.getPets().add(dog1);
+
+        Pet dog2 = new Pet();
+        dog2.setPetType(savedDogPetType);
+        dog2.setName("Daisie");
+        dog2.setBirthDate(LocalDate.of(2008, 12, 27));
+        dog2.setOwner(owner1);
+        owner1.getPets().add(dog2);
 
         ownerService.Save(owner1);
 
@@ -43,6 +63,16 @@ public class DataLoader implements CommandLineRunner {
         //owner2.setId(2L);
         owner2.setFirstName("Fiona");
         owner2.setLastName("Glenanne");
+        owner2.setAddress("446 Du Blizzard");
+        owner2.setCity("St-Jean");
+        owner2.setTelephone("450-515-5566");
+
+        Pet cat1 = new Pet();
+        cat1.setPetType(savedCatPetType);
+        cat1.setName("Cocotte");
+        cat1.setBirthDate(LocalDate.of(2015, 8, 2));
+        cat1.setOwner(owner1);
+        owner2.getPets().add(cat1);
 
         ownerService.Save(owner2);
 
