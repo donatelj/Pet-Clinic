@@ -1,3 +1,0 @@
-# Created at 2019-07-12T08:17:10.589
-Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=C:\N3\keystoreSIPL\CertsKeystore -DUseSunHttpHandler=true -Dssl.SocketFactory.provider=sun.security.ssl.SSLSocketFactoryImpl -Dssl.ServerSocketFactory.provider=sun.security.ssl.SSLSocketFactoryImpl
-

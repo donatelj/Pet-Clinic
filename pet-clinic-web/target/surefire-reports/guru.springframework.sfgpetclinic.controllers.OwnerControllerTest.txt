@@ -1,4 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: guru.springframework.sfgpetclinic.controllers.OwnerControllerTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.324 s - in guru.springframework.sfgpetclinic.controllers.OwnerControllerTest
+Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 3.045 s <<< FAILURE! - in guru.springframework.sfgpetclinic.controllers.OwnerControllerTest
+processFindFormReturnOne  Time elapsed: 0.172 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<302>
+	at guru.springframework.sfgpetclinic.controllers.OwnerControllerTest.processFindFormReturnOne(OwnerControllerTest.java:80)
+
+displayOwner  Time elapsed: 0.141 s  <<< FAILURE!
+java.lang.AssertionError: View name expected:</owners/ownerDetail> but was:<owners/ownerDetails>
+	at guru.springframework.sfgpetclinic.controllers.OwnerControllerTest.displayOwner(OwnerControllerTest.java:92)
+
