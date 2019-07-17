@@ -32,7 +32,7 @@ public class PetSDJpaService implements PetService {
     }
 
     @Override
-    public Pet Save(Pet object) {
+    public Pet save(Pet object) {
         return petRepository.save(object);
     }
 

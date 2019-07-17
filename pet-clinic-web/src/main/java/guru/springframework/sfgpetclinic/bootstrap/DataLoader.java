@@ -37,11 +37,11 @@ public class DataLoader implements CommandLineRunner {
         PetType dog = new PetType();
         dog.setName("Dog");
 
-        PetType savedDogPetType = petTypeService.Save(dog);
+        PetType savedDogPetType = petTypeService.save(dog);
 
         PetType cat = new PetType();
         cat.setName("Cat");
-        PetType savedCatPetType = petTypeService.Save(cat);
+        PetType savedCatPetType = petTypeService.save(cat);
 
         Owner owner1 = new Owner();
         //owner1.setId(1L);
@@ -65,7 +65,7 @@ public class DataLoader implements CommandLineRunner {
         dog2.setOwner(owner1);
         owner1.getPets().add(dog2);
 
-        ownerService.Save(owner1);
+        ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         //owner2.setId(2L);
@@ -82,14 +82,14 @@ public class DataLoader implements CommandLineRunner {
         cat1.setOwner(owner2);
         owner2.getPets().add(cat1);
 
-        ownerService.Save(owner2);
+        ownerService.save(owner2);
 
         Visit catVisit = new Visit();
         catVisit.setPet(cat1);
         catVisit.setDate(LocalDate.now());
         catVisit.setDescription("Sneezy kitty");
 
-        visitService.Save(catVisit);
+        visitService.save(catVisit);
 
         System.out.println("loaded Owners...");
 
@@ -100,13 +100,13 @@ public class DataLoader implements CommandLineRunner {
 
         Specialty specialty1 = new Specialty();
         specialty1.setDescription("Radiology");
-        vet1.getSpecialities().add(specialtyService.Save(specialty1));
+        vet1.getSpecialities().add(specialtyService.save(specialty1));
 
         Specialty specialty2 = new Specialty();
         specialty2.setDescription("Surgery");
-        vet1.getSpecialities().add(specialtyService.Save(specialty2));
+        vet1.getSpecialities().add(specialtyService.save(specialty2));
 
-        vetService.Save(vet1);
+        vetService.save(vet1);
 
         Vet vet2 = new Vet();
         //vet2.setId(2L);
@@ -115,9 +115,9 @@ public class DataLoader implements CommandLineRunner {
 
         Specialty specialty3 = new Specialty();
         specialty3.setDescription("Dentistry");
-        vet2.getSpecialities().add(specialtyService.Save(specialty3));
+        vet2.getSpecialities().add(specialtyService.save(specialty3));
 
-        vetService.Save(vet2);
+        vetService.save(vet2);
 
         System.out.println("loaded Vets...");
 

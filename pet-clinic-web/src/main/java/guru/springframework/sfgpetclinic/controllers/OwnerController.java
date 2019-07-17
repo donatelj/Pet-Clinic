@@ -90,7 +90,7 @@ public class OwnerController {
         if (result.hasErrors()) {
             return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
         } else {
-            Owner savedOwner = this.ownerService.Save(owner);
+            Owner savedOwner = this.ownerService.save(owner);
             return "redirect:/owners/" + savedOwner.getId();
         }
     }
@@ -107,7 +107,7 @@ public class OwnerController {
             return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
         } else {
             owner.setId(ownerId);
-            Owner savedOwner = ownerService.Save(owner);
+            Owner savedOwner = ownerService.save(owner);
             return "redirect:/owners/" + savedOwner.getId();
         }
 

@@ -103,14 +103,14 @@ class OwnerControllerTest {
 
     @Test
     public void processCreationForm() throws Exception {
-        when(ownerService.Save(ArgumentMatchers.any())).thenReturn(Owner.builder().id(1L).build());
+        when(ownerService.save(ArgumentMatchers.any())).thenReturn(Owner.builder().id(1L).build());
 
         mockMvc.perform(post("/owners/new"))
                 .andExpect(status().is3xxRedirection())
                 .andExpect(view().name("redirect:/owners/1"))
                 .andExpect(model().attributeExists("owner"));
 
-        verify(ownerService).Save(ArgumentMatchers.any());
+        verify(ownerService).save(ArgumentMatchers.any());
     }
     @Test
     public void initUpdateOwnerForm() throws Exception {
@@ -123,7 +123,7 @@ class OwnerControllerTest {
     }
 
     @Test void processUpdateOwnerFormSuccess() throws Exception {
-        when(ownerService.Save(ArgumentMatchers.any())).thenReturn(Owner.builder().id(1L).build());
+        when(ownerService.save(ArgumentMatchers.any())).thenReturn(Owner.builder().id(1L).build());
 
         mockMvc.perform(post("/owners/1/edit"))
                 .andExpect(status().is3xxRedirection())
